@@ -1,4 +1,6 @@
-body {
+@import '~rsuite/dist/styles/rsuite-dark.css'
+
+/* body {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -9,4 +11,4 @@ body {
 
 .data-list {
   list-style: none;
-}
+} */
