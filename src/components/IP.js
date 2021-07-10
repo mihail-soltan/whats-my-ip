@@ -1,5 +1,6 @@
 import data from "./data" 
 import { useEffect, useState } from "react"
+import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 
 export default function IP() {
     // console.log(process.env)
@@ -7,6 +8,8 @@ export default function IP() {
     const [userData, setUserData] = useState([])
     const [userData1, setUserData1] = useState([])
     const apiLink =`https://geo.ipify.org/api/v1?apiKey=${process.env.REACT_APP_IPIFY_API_KEY}`
+    const [lat, setLat] = useState(1)
+    const [lng, setLng] = useState(1)
     
     useEffect(() => {
         setUserData([data])
@@ -22,6 +25,8 @@ export default function IP() {
           })
           .then((data1) => {
             setUserData1([data1])
+            setLat(data1.location.lat)
+            setLng(data1.location.lng)
           })
           .catch((err) => console.log(err))
     }, [])
@@ -53,6 +58,7 @@ export default function IP() {
 
                   )
               }
+              
           </>  
         
     )
