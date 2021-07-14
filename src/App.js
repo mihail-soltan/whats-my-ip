@@ -1,7 +1,8 @@
 import './styles.css';
 import IP from './components/IP'
 import 'rsuite/dist/styles/rsuite-default.css'
-
+import Map from './components/Map';
+// import 'leaflet/dist/leaflet.css';
 // import 'rsuite/lib/styles/index.less'
 import { Container, Footer, Content, Navbar, Nav, Header, Icon, Dropdown, Divider } from 'rsuite'
 function App() {
