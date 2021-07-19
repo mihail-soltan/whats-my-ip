@@ -10,8 +10,8 @@ export default function IP() {
   const [userData, setUserData] = useState([])
   const [userData1, setUserData1] = useState([])
   const apiLink = `https://geo.ipify.org/api/v1?apiKey=${process.env.REACT_APP_IPIFY_API_KEY}`
-  const [lat, setLat] = useState(1)
-  const [lng, setLng] = useState(1)
+  const [lat, setLat] = useState(null)
+  const [lng, setLng] = useState(null)
   const [flag, setFlag] = useState('')
   const [capital, setCapital] = useState('')
   const [region, setRegion] = useState('')
@@ -88,7 +88,7 @@ export default function IP() {
       <p>Contenent: {region}</p>
       <p>Capital: {capital}</p>
       <img src={flag} style={{ height: 200 }} />
-      <Map lat={lat} lng={lng} />
+      {lat && lng? <Map lat={lat} lng={lng}/>:"loading"}
 
 
     </>
