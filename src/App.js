@@ -4,7 +4,7 @@ import 'rsuite/dist/styles/rsuite-default.css'
 import Map from './components/Map';
 // import 'leaflet/dist/leaflet.css';
 // import 'rsuite/lib/styles/index.less'
-import { Container, Footer, Content, Navbar, Nav, Header, Icon, Dropdown, Divider } from 'rsuite'
+import { Container, Content, Navbar, Nav, Header, Icon, Dropdown } from 'rsuite'
 function App() {
 
   return (
@@ -15,14 +15,9 @@ function App() {
       <Container>
         <Header>
           <Navbar appearance="inverse">
-            {/* <Navbar.Header> */}
-                {/* <a className="navbar-brand logo">BRAND</a> */}
-            {/* </Navbar.Header> */}
             <Navbar.Body>
               <Nav>
                 <Nav.Item icon={<Icon icon="home" />}>Home</Nav.Item>
-                <Nav.Item>News</Nav.Item>
-                <Nav.Item>Products</Nav.Item>
                 <Dropdown title="About">
                   <Dropdown.Item>Company</Dropdown.Item>
                   <Dropdown.Item>Team</Dropdown.Item>
@@ -37,11 +32,9 @@ function App() {
         </Header>
         <Content>
           <IP />
-          <Divider>Map</Divider>
-          
 
         </Content>
-        <Footer>Footer</Footer>
+        
       </Container>
     </div>
     // </div>

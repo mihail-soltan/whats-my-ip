@@ -1,9 +1,8 @@
 import data from "./data"
 import { useEffect, useState } from "react"
 import Map from "./Map"
-
-
-
+import { Panel, PanelGroup } from 'rsuite';
+import {Paragraph} from 'rsuite'
 export default function IP() {
   // console.log(process.env)
   // console.log(data.location.country)
@@ -59,37 +58,28 @@ export default function IP() {
   return (
 
     <>
-      <h1>Data from data.js</h1>
-      {userData.map((item) =>
-        <ul className='data-list'>
-          <li key={Math.random() * 1000}>
-            {item.ip}
-
-          </li>
-          <li key={Math.random() * 1000}>
-            {item.location.country}
-          </li>
-          <li key={Math.random() * 1000}>
-            {item.location.lat}, {item.location.lng}
-          </li>
-
-        </ul>)}
-      <h2>Response from API</h2>
+      
+          <Panel className="panel" header={<h3>Your Data</h3>} style={{width: "50%"}} bordered>
+     
       {
         userData1.map((item) =>
           <ol>
-            <li key={Math.random() * 1000}>{item.ip}</li>
-            <li key={Math.random() * 1000}>{item.location.lat}, {item.location.lng}</li>
+            <h4><li key={Math.random() * 1000}>IP Address: {item.ip}</li></h4>
+            <h4><li key={Math.random() * 1000}>Latitude: {item.location.lat}</li></h4>
+            <h4><li key={Math.random() * 1000}>Longitude: {item.location.lng}</li></h4>
           </ol>
 
 
         )
       }
-      <p>Contenent: {region}</p>
-      <p>Capital: {capital}</p>
+      <h3>Continent: {region}</h3>
+      <h3>Capital: {capital}</h3>
       <img src={flag} style={{ height: 200 }} />
-      {lat && lng? <Map lat={lat} lng={lng}/>:"loading"}
-
+      
+      </Panel>
+      <Panel header={<h3>Current Location</h3>} style={{width: "50%"}} bordered>
+      {lat && lng? <Map lat={lat} lng={lng} />:"loading"}
+      </Panel>
 
     </>
 

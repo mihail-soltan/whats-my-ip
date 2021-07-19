@@ -24,7 +24,7 @@ export default function Map ({lat, lng}) {
           />
           <Marker position={[lat, lng]}>
             <Popup>
-              A pretty CSS3 popup. <br /> Easily customizable.
+              Your coordinates: <br /> Latitude {lat} <br/> Longitude {lng}
             </Popup>
           </Marker>
         </MapContainer>
