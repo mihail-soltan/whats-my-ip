@@ -50,7 +50,7 @@ export default function IP() {
             // console.log(result[0].latlng[1])           
   
           })
-          fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${data.location.lat}&lon=${data.location.lng}&units=metric&appid=${process.env.REACT_APP_OPENWEATHER_API_KEY}`)
+          fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${data.location.lat}&lon=${data.location.lng}&units=metric&appid=${process.env.REACT_APP_OPENWEATHER_API_KEY}`)
             .then((res) => {
               if (res.ok){
                 return res.json()
