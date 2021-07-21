@@ -1,18 +1,53 @@
 import {Panel} from 'rsuite'
+import {Doughnut} from 'react-chartjs-2'
 export default function Covid({covid}) {
    
     return (
         <>
        
         {covid.length  ? 
-
+            
             <Panel className="panel" header={<h4>Global Pandemic Data</h4>} collapsible bordered>
-        <h3>Total Cases Confirmed: {covid[0].Global.TotalConfirmed} </h3>
-        <h3>Total Recovered: {covid[0].Global.TotalRecovered} </h3>
-        <h3>New Confirmed: {covid[0].Global.NewConfirmed} </h3>
-        <h3>New Recovered: {covid[0].Global.NewRecovered} </h3>
-        
-        
+               <div className="covid">
+        <Doughnut 
+              height={200}
+              width={200}
+              data={{
+                  labels: ['Total Cases Confirmed', 'Total Cases Recovered', 'Total Deaths'],
+                  datasets: [
+                      {
+                          label: "Global Covid Data",
+                          data: [`${covid[0].Global.TotalConfirmed}`, `${covid[0].Global.TotalRecovered}` , `${covid[0].Global.TotalDeaths}`],
+                          backgroundColor: [
+                            '#C43B44', '#763BC4', 'Black'
+                          ]
+                          
+                      }
+                  ]
+              }}
+              
+        />
+        <Doughnut 
+              height={200}
+              width={200}
+              data={{
+                  labels: [ 'New Cases Confirmed', 'New Cases Recovered'],
+                  datasets: [
+                      {
+                          label: "Global Covid Data",
+                          data: [`${covid[0].Global.NewConfirmed}`, `${covid[0].Global.NewRecovered}`],
+                          backgroundColor: [
+                            '#3BC4BB', '#89C43B'
+                          ],
+                          borderColor: [
+                              'black'
+                          ]
+                      }
+                  ]
+              }}
+              
+        />
+        </div>
         </Panel>
         
         

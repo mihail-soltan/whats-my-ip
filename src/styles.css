@@ -22,8 +22,18 @@
   flex-wrap: wrap;
   
 }
-@media(max-width: 650px){
+.covid {
+  display: flex;
+  flex-direction: row;
+
+  /* align-items: center;
+  justify-content: center; */
+}
+@media(max-width: 800px){
   .panel{
     width: 100%;
+  }
+  .covid{
+    flex-direction: column;
   }
 }
