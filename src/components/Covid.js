@@ -1,5 +1,6 @@
 import {Panel} from 'rsuite'
 import {Doughnut} from 'react-chartjs-2'
+import { HashLoader } from 'react-spinners'
 export default function Covid({covid}) {
    
     return (
@@ -51,7 +52,7 @@ export default function Covid({covid}) {
         </Panel>
         
         
-    : <h1>loading</h1>}
+    : <HashLoader/>}
     </>
     )
 }

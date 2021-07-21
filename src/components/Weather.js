@@ -1,5 +1,6 @@
 import {Panel} from 'rsuite'
 import { DateTime } from "luxon"
+import { HashLoader } from 'react-spinners'
 export default function Weather({weatherData, userData}) {
    
     return (
@@ -17,7 +18,7 @@ export default function Weather({weatherData, userData}) {
         </Panel>
         
         
-    : <h1>loading</h1>}
+    : <HashLoader/>}
     </>
     )
 }

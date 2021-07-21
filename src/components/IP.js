@@ -3,6 +3,7 @@ import Map from "./Map"
 import { Panel } from 'rsuite';
 import Weather from "./Weather";
 import Covid from "./Covid"
+import { HashLoader } from "react-spinners";
 export default function IP() {
   // console.log(process.env)
   // console.log(data.location.country)
@@ -105,7 +106,7 @@ export default function IP() {
       </div>
       <div className="ip-weather-box">
       <Panel className="panel" header={<h3>Current Location</h3>}  bordered>
-      {lat && lng? <Map lat={lat} lng={lng} />:"loading"}
+      {lat && lng? <Map lat={lat} lng={lng} />:<HashLoader/>}
       </Panel>
       <Covid covid={covid}/>
       </div>
